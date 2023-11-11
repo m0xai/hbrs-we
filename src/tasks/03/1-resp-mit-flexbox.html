@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body {
+      width: 90%;
+      height: 100%;
+      margin: 0 auto;
+    }
+
+    #wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .red {
+      background-color: red;
+      width: 100%;
+      height: 200px;
+      margin-bottom: 1rem;
+    }
+
+    .green {
+      background-color: #2DEE26;
+      width: 18%;
+      height: 800px;
+    }
+
+    .blue {
+      background-color: #0533FE;
+      width: 60%;
+      height: 800px;
+    }
+
+    .purple {
+      background-color: #EB3EFE;
+      width: 18%;
+      height: 800px;
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .blue {
+        width: 81%;
+      }
+
+      .purple {
+        width: 100%;
+        height: 200px;
+        margin-top: 1rem;
+      }
+    }
+
+    @media (min-width: 320px) and (max-width: 768px) {
+      .green, .purple {
+        height: 200px;
+      }
+
+      .green, .purple, .blue {
+        width: 100%;
+      }
+
+      .blue {
+        margin: .25rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+  <div class="red"></div>
+  <div class="green"></div>
+  <div class="blue"></div>
+  <div class="purple"></div>
+</div>
+</body>
+</html>
