@@ -32,3 +32,8 @@ body {
 .header-nav > a:hover {
     color: purple;
 }
+
+.live-demo-link {
+    display: block;
+    margin: 1rem;
+}
