@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Document</title>
+    <style>
+        .responsive {
+            width: 100%;
+            height: auto;
+        }
+
+        #image-wrapper {
+            border: 1px solid black
+        }
+
+        img {
+            padding: 4px;
+        }
+
+        input {
+            float: left;
+        }
+
+        input[type=checkbox] + div > img {
+            display: none;
+        }
+
+        input[type=checkbox]:checked + div > img {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Übung 2.2</h1>
+<div>
+    <label for="scales">hide and show via checkbox</label>
+    <input checked id="scales" name="scales" type="checkbox"/>
+    <div id="image-wrapper">
+        <img alt="hbrs" class="responsive" src="https://kaul.inf.h-brs.de/ccm/we/ws23/resources/assets/h-brs.jpg"/>
+    </div>
+
+</div>
+
+</body>
+</html>
