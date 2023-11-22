@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klammerpaare</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div>
+        <label for="pre-list-input">Pre Symbol</label>
+        <input class="symbol-input" id="pre-list-input" type="text" maxlength="1" />
+        <label for="post-list-input">Post Symbol</label>
+        <input class="symbol-input" id="post-list-input" type="text" maxlength="1" />
+        <button onclick="submitSymbols()">Set Symbols</button>
+    </div>
+
+    <div>
+        <ul id="symbol-list">
+            <p>No Symbol selected. Please use form above to set pre and post symbols</p>
+        </ul>
+    </div>
+
+    <div>
+        <textarea id="eingabe"></textarea>
+        <button onclick="submitSymbols()">Set Symbols</button>
+        <button onclick="clearTextArea()">Clear</button>
+    </div>
+</body>
+<script src="./script.js"></script>
+
+</html>
