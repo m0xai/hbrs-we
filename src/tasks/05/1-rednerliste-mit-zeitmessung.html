@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Renderliste mir Zeiterfassung</title>
+</head>
+<body>
+<h1>Rendnerliste</h1>
+<div>
+    <div id="form">
+        <label for="new-render">Neuer Render</label>
+        <input id="new-render" type="text">
+        <button onclick="createRendner()">Submit</button>
+    </div>
+</div>
+<div >
+    <ul id="rendner-liste">
+    </ul>
+</div>
+</body>
+<script>
+    const formEl = document.getElementById("form")
+    formEl.addEventListener("submit", () => {
+        console.log("Heyyo")
+    })
+
+    class Rendner {
+        name = "";
+        duration = 0;
+        intervalId = null
+
+        constructor(name) {
+            this.name = name;
+        }
+         start() {
+            const timerEl = document.getElementById(`${this.name}-timer`)
+            this.intervalId = setInterval(() => {
+                this.duration++;
+                timerEl.innerText = this.showAsTimer();
+            }, 1000)
+        }
+        stop() {
+            clearInterval(this.intervalId)
+        }
+
+        showAsTimer() {
+            const hours = Math.floor(this.duration / 3600);
+            const minutes = Math.floor((this.duration % 3600) / 60);
+            const seconds = this.duration % 60;
+
+            // Use padStart to ensure that all components have at least two digits
+            const formattedHours = String(hours).padStart(2, '0');
+            const formattedMinutes = String(minutes).padStart(2, '0');
+            const formattedSeconds = String(seconds).padStart(2, '0');
+
+            return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+        }
+    }
+
+    const rendnerListeEl = document.getElementById("rendner-liste")
+    const rendnerList = []
+    function createRendner() {
+        const inputVal = document.getElementById("new-render").value
+        const r = new Rendner(inputVal);
+        const li = document.createElement("li");
+        li.innerHTML = `${r.name} <span id="${r.name}-timer">${r.showAsTimer()}</span>
+            <button id="${r.name}-btn">Start</button>`;
+        rendnerListeEl.appendChild(li);
+        // Set click event listener for start button
+        const rBtn = document.getElementById(`${r.name}-btn`)
+        rBtn.addEventListener("click", () =>  toggleTimer(r.name));
+        rendnerList.push(r);
+    }
+
+    function toggleTimer(rendnerName) {
+        const el = document.getElementById(`${rendnerName}-btn`);
+        const rendner = rendnerList.find(r => r.name === rendnerName);
+        if(el.innerText === "Start") {
+            rendner.start();
+            el.innerText = "Stop"
+        } else if(el.innerText === "Stop") {
+            rendner.stop();
+            el.innerText = "Start"
+        }
+    }
+
+</script>
+</html>

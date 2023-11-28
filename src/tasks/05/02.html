@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Performance Measurements</title>
+</head>
+<body>
+<h1>DOM Performance Measurements</h1>
+<table border="1">
+  <thead>
+  <tr>
+    <th>Operation</th>
+    <th>Time (ms)</th>
+  </tr>
+  </thead>
+  <tbody id="results-body"></tbody>
+</table>
+
+<script>
+  const container = document.createElement('div');
+  document.body.appendChild(container);
+
+  function measurePerformance(operation) {
+    const start = performance.now();
+
+    container.innerHTML = operation;
+
+    const end = performance.now();
+    return end - start;
+  }
+
+  function displayResults(operation, time) {
+    const resultsBody = document.getElementById('results-body');
+    const row = resultsBody.insertRow();
+    const cellOperation = row.insertCell(0);
+    const cellTime = row.insertCell(1);
+
+    cellOperation.innerText = operation;
+    cellTime.innerText = time.toFixed(10); // Display time with 10 decimal places
+  }
+
+  const operations = {
+    innerHTML: '<p>Hello, <strong>world</strong>!</p>',
+    innerText: 'Hello, world!',
+    textContent: 'Hello, world!',
+    outerHTML: '<p>Hello, <strong>world</strong>!</p>',
+  };
+
+  for (const operation in operations) {
+    const time = measurePerformance(operations[operation]);
+    displayResults(operation, time);
+  }
+</script>
+</body>
+</html>
