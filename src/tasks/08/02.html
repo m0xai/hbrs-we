@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Concatenation</title>
+</head>
+<body>
+<ul id="result"></ul>
+
+<script>
+    async function fetchData(url) {
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error(`Failed to fetch ${url}`);
+        }
+
+        return await response.text();
+    }
+
+    async function concatenateFiles(fileA, fileB) {
+        const resultElement = document.getElementById('result');
+
+        try {
+            // Fetch both files in parallel
+            const [contentA, contentB] = await Promise.all([fetchData(fileA), fetchData(fileB)]);
+
+            const linesA = contentA.split('\n');
+            const linesB = contentB.split('\n');
+
+            // Ensure both files have the same number of lines
+            if (linesA.length !== linesB.length) {
+                throw new Error('Files have different number of lines');
+            }
+
+            // Concatenate lines and display the result
+            linesA.forEach((lineA, index) => {
+                const lineB = linesB[index];
+                const concatenatedLine = `${lineA} ${lineB}`;
+                const listItem = document.createElement('li');
+                listItem.textContent = concatenatedLine;
+                resultElement.appendChild(listItem);
+            });
+        } catch (error) {
+            console.error(error.message);
+        }
+    }
+
+    // Replace 'A.txt' and 'B.txt' with the actual paths to your text files
+    concatenateFiles('A.txt', 'B.txt');
+</script>
+</body>
+</html>

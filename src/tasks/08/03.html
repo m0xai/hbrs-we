@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WWW-Navigator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        #navigator {
+            flex: 1;
+            padding: 20px;
+            background-color: #f0f0f0;
+            overflow-y: auto;
+        }
+
+        #content {
+            flex: 2;
+            padding: 20px;
+            background-color: #fff;
+            overflow-y: auto;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        h2 {
+            margin-top: 20px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+<div id="navigator">
+    <h1>WWW-Navigator</h1>
+    <ul id="main-menu"></ul>
+</div>
+<div id="content">
+    <h1>Welcome!</h1>
+    <p>Select a topic from the menu on the left to get started.</p>
+</div>
+
+<script>
+    let data;
+    fetch('data.json')
+        .then(response => response.json())
+        .then(jsonData => {
+            data = jsonData;
+            const mainMenu = document.getElementById('main-menu');
+            Object.keys(data).forEach(topic => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `<a href="#" onclick="loadSubmenu('${topic}')">${topic.toUpperCase()}</a>`;
+                mainMenu.appendChild(listItem);
+            });
+        })
+        .catch(error => console.error('Error fetching data:', error));
+
+    function loadSubmenu(topic) {
+        const contentElement = document.getElementById('content');
+        contentElement.innerHTML = `<h1>${topic.toUpperCase()}</h1>`;
+
+        const submenu = data[topic];
+        Object.keys(submenu).forEach(subtopic => {
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `<a href="#" onclick="loadContent('${topic}', '${subtopic}')">${subtopic}</a>`;
+            contentElement.appendChild(listItem);
+        });
+    }
+
+    function loadContent(topic, subtopic) {
+        const contentElement = document.getElementById('content');
+        const subtopicData = data[topic][subtopic];
+
+        contentElement.innerHTML = `<h2>${subtopic}</h2>`;
+        contentElement.innerHTML += `<p>${subtopicData.content}</p>`;
+
+        if (subtopicData.references) {
+            contentElement.innerHTML += '<h3>References:</h3>';
+            contentElement.innerHTML += '<ul>';
+            subtopicData.references.forEach(reference => {
+                contentElement.innerHTML += `<li><a href="${reference}" target="_blank">${reference}</a></li>`;
+            });
+            contentElement.innerHTML += '</ul>';
+        }
+    }
+</script>
+</body>
+</html>
