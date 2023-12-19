@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #006400; /* Dark Green Background */
+        }
+
+        svg {
+            border: 2px solid white; /* White border around the SVG */
+            cursor: pointer;
+        }
+
+        line {
+            stroke: white; /* White lines */
+            stroke-width: 2;
+        }
+
+        text {
+            font-family: Arial, sans-serif;
+            font-size: 48px;
+            fill: white; /* White X and O */
+            pointer-events: none;
+            dominant-baseline: middle;
+            text-anchor: middle;
+        }
+    </style>
+    <title>Tic-Tac-Toe</title>
+</head>
+<body>
+
+<svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+    <!-- Vertical Lines -->
+    <line x1="100" y1="0" x2="100" y2="300" />
+    <line x1="200" y1="0" x2="200" y2="300" />
+
+    <!-- Horizontal Lines -->
+    <line x1="0" y1="100" x2="300" y2="100" />
+    <line x1="0" y1="200" x2="300" y2="200" />
+
+    <!-- Cells -->
+    <rect x="0" y="0" width="100" height="100" fill="#006400" onclick="handleClick(0, 0)" />
+    <rect x="100" y="0" width="100" height="100" fill="#006400" onclick="handleClick(1, 0)" />
+    <rect x="200" y="0" width="100" height="100" fill="#006400" onclick="handleClick(2, 0)" />
+
+    <rect x="0" y="100" width="100" height="100" fill="#006400" onclick="handleClick(0, 1)" />
+    <rect x="100" y="100" width="100" height="100" fill="#006400" onclick="handleClick(1, 1)" />
+    <rect x="200" y="100" width="100" height="100" fill="#006400" onclick="handleClick(2, 1)" />
+
+    <rect x="0" y="200" width="100" height="100" fill="#006400" onclick="handleClick(0, 2)" />
+    <rect x="100" y="200" width="100" height="100" fill="#006400" onclick="handleClick(1, 2)" />
+    <rect x="200" y="200" width="100" height="100" fill="#006400" onclick="handleClick(2, 2)" />
+
+    <!-- X and O -->
+    <text x="50" y="50" id="cell00"></text>
+    <text x="150" y="50" id="cell01"></text>
+    <text x="250" y="50" id="cell02"></text>
+
+    <text x="50" y="150" id="cell10"></text>
+    <text x="150" y="150" id="cell11"></text>
+    <text x="250" y="150" id="cell12"></text>
+
+    <text x="50" y="250" id="cell20"></text>
+    <text x="150" y="250" id="cell21"></text>
+    <text x="250" y="250" id="cell22"></text>
+</svg>
+
+<script>
+    let currentPlayer = 'X';
+    const board = [
+        ['', '', ''],
+        ['', '', ''],
+        ['', '', '']
+    ];
+
+    function handleClick(row, col) {
+        if (board[row][col] === '') {
+            board[row][col] = currentPlayer;
+            document.getElementById(`cell${row}${col}`).textContent = currentPlayer;
+            checkWinner(row, col);
+            currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+        }
+    }
+
+    function checkWinner(row, col) {
+        // Check row
+        if (board[row][0] === currentPlayer && board[row][1] === currentPlayer && board[row][2] === currentPlayer) {
+            alert(`${currentPlayer} wins!`);
+            resetGame();
+        }
+        // Check column
+        else if (board[0][col] === currentPlayer && board[1][col] === currentPlayer && board[2][col] === currentPlayer) {
+            alert(`${currentPlayer} wins!`);
+            resetGame();
+        }
+        // Check diagonals
+        else if ((row === col && board[0][0] === currentPlayer && board[1][1] === currentPlayer && board[2][2] === currentPlayer) ||
+            (row + col === 2 && board[0][2] === currentPlayer && board[1][1] === currentPlayer && board[2][0] === currentPlayer)) {
+            alert(`${currentPlayer} wins!`);
+            resetGame();
+        } else if (board.every(row => row.every(cell => cell !== ''))) {
+            alert("It's a draw!");
+            resetGame();
+        }
+    }
+
+    function resetGame() {
+        currentPlayer = 'X';
+        for (let i = 0; i < 3; i++) {
+            for (let j = 0; j < 3; j++) {
+                board[i][j] = '';
+                document.getElementById(`cell${i}${j}`).textContent = '';
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
