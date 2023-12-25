@@ -7,52 +7,58 @@
     <link rel="stylesheet" href="src/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Lato&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Lato&family=Poppins:wght@300;400;700&display=swap"
+          rel="stylesheet">
     <style type="text/css">
-        .gist {width:500px !important;}
+        .gist {
+            width: 500px !important;
+        }
+
         .gist-file
-        .gist-data {max-height: 500px;max-width: 500px;}
+        .gist-data {
+            max-height: 500px;
+            max-width: 500px;
+        }
     </style>
 </head>
 <body>
 <header class="site-header">
-    <h1>Kerem Zopcuk - Portfolio</h1>
+    <h1>Kerem Z. - Portfolio</h1>
     <nav class="header-nav">
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a href="https://github.com/m0xai" target="_blank">Github</a>
     </nav>
 </header>
 <main class="wrapper">
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
+        <button class="sidebar-toggle-btn">O</button>
         <div class="avatar">Avatar</div>
         <ul>
-            <li><a href="#task1-7">Task 1.7</a></li>
-            <li><a href="#task2-3">Task 2.3</a></li>
-            <li><a href="#task3-1">Task 3.1</a></li>
-            <li><a href="#task6-1">Task 6.1</a></li>
-            <li><a href="#task8-1">Task 8.1</a></li>
-            <li><a href="#task8-2">Task 8.2</a></li>
-            <li><a href="#task8-3">Task 8.3</a></li>
-            <li><a href="#task9-1">Task 9.1</a></li>
-            <li><a href="#task9-2">Task 9.2</a></li>
-            <li><a href="#task9-3">Task 9.3</a></li>
+            <a class="menu-item-link" href="#task1-7"><span>Task 1.7</span></a>
+            <a class="menu-item-link" href="#task2-3"><span>Task 2.3</span></a>
+            <a class="menu-item-link" href="#task3-1"><span>Task 3.1</span></a>
+            <a class="menu-item-link" href="#task6-1"><span>Task 6.1</span></a>
+            <a class="menu-item-link" href="#task8-1"><span>Task 8.1</span></a>
+            <a class="menu-item-link" href="#task8-2"><span>Task 8.2</span></a>
+            <a class="menu-item-link" href="#task8-3"><span>Task 8.3</span></a>
+            <a class="menu-item-link" href="#task9-1"><span>Task 9.1</span></a>
+            <a class="menu-item-link" href="#task9-2"><span>Task 9.2</span></a>
+            <a class="menu-item-link" href="#task9-3"><span>Task 9.3</span></a>
         </ul>
     </aside>
     <section class="content">
+        <div class="menu-btn" onclick="toggleSidebar()">☰</div>
         <h2>Tasks</h2>
         <div id="task1-7" class="single-task">
             <h3>1.7: HTML Wireframe</h3>
             <a class="live-demo-link" href="src/tasks/01/1-7_HTML-Wireframe.html">Live Demo</a>
-            <script  src="https://gist.github.com/m0xai/8cd9be3910f2d0c1c4dfc2d9b9780731.js"></script>
+            <script src="https://gist.github.com/m0xai/8cd9be3910f2d0c1c4dfc2d9b9780731.js"></script>
         </div>
-        <hr>
         <div id="task2-3" class="single-task">
             <h3>2.3: CSS-Positionierung</h3>
             <h3>Loesung zu 1. Video</h3>
             <a class="live-demo-link" href="src/tasks/02/2-erste-video.html">Live Demo</a>
             <script src="https://gist.github.com/m0xai/e98bfd72b8833e17731025cdceb73cd9.js"></script>
         </div>
-        <hr>
         <div class="single-task">
             <h3>2.3: CSS-Positionierung</h3>
             <h3>Loesung zu 2. Video</h3>
@@ -62,7 +68,6 @@
             <a class="live-demo-link" href="src/tasks/02/2-zweite-video.html">Live Demo</a>
             <script src="https://gist.github.com/m0xai/b647fe6ae2c542341c680a125a13034c.js"></script>
         </div>
-        <hr>
         <div id="task3-1" class="single-task">
             <h3>3.1 Responsiv mit Flexbox und Desktop-First</h3>
             <a class="live-demo-link" href="src/tasks/03/1-resp-mit-flexbox.html">Live Demo</a>
@@ -102,5 +107,22 @@
     </section>
 </main>
 
+<script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        const menuBtn = document.querySelector(".menu-btn");
+        const content = document.querySelector(".content");
+
+        if (sidebar.style.width === "250px") {
+            sidebar.style.width = "0";
+            menuBtn.innerHTML = "&#9776;"; // Change icon to menu icon
+            content.style.marginLeft = "0px"
+        } else {
+            sidebar.style.width = "250px";
+            menuBtn.innerHTML = "&times;"; // Change icon to close icon
+            content.style.marginLeft = "250px"
+        }
+    }
+</script>
 </body>
 </html>
