@@ -24,7 +24,10 @@
 <body onload="toggleSidebar()">
 <main class="wrapper">
     <aside class="sidebar" id="sidebar">
-        <div class="avatar">Avatar</div>
+        <div class="avater-wrapper">
+            <div class="avatar"></div>
+        </div>
+        <h4 class="sidebar-subtitle">Lösungen - Navigator</h4>
         <ul>
             <a class="menu-item-link" href="#task1-7"><span>Task 1.7</span></a>
             <a class="menu-item-link" href="#task2-3"><span>Task 2.3</span></a>
@@ -46,7 +49,7 @@
             </nav>
         </header>
         <div class="menu-btn" onclick="toggleSidebar()">☰</div>
-        <h2>Tasks</h2>
+        <h2>Lösungen</h2>
         <div id="task1-7" class="single-task">
             <h3>1.7: HTML Wireframe</h3>
             <a class="live-demo-link" href="src/tasks/01/1-7_HTML-Wireframe.html">Live Demo</a>
@@ -114,13 +117,19 @@
 
         if (sidebar.style.width === "250px") {
             sidebar.style.width = "0";
+
             menuBtn.innerHTML = "&#9776;"; // Change icon to menu icon
-            menuBtn.style.marginLeft = "0px"
+            menuBtn.style.left = "0px"
+            menuBtn.style.paddingLeft = "1rem"
+
             content.style.marginLeft = "32px"
         } else {
             sidebar.style.width = "250px";
+
             menuBtn.innerHTML = "&times;"; // Change icon to close icon
-            menuBtn.style.marginLeft = "-80px"
+            menuBtn.style.left = "220px"
+            menuBtn.style.paddingLeft = "0px"
+
             content.style.marginLeft = "282px"
         }
     }

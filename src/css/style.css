@@ -47,12 +47,18 @@ body {
     padding-top: 60px;
     position: fixed;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .sidebar ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+
+.sidebar-subtitle {
+    margin-left: 1rem;
 }
 
 .menu-item-link {
@@ -71,6 +77,12 @@ body {
 .menu-item-link span {
     display: block;
     padding-left: 2rem;
+}
+
+.avater-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
 }
 
 .avatar {
@@ -96,6 +108,7 @@ body {
     position: fixed;
     z-index: 2;
     display: none;
+    top: 1rem
 }
 
 @media screen and (max-width: 600px) {
@@ -115,5 +128,9 @@ body {
 @media screen and (min-width: 600px) {
     .menu-btn {
         display: block;
+        background: #616128;
+        left: 0;
+        padding-left: 1rem;
+        border-radius: 0 1rem 1rem 0;
     }
 }
