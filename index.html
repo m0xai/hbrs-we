@@ -21,16 +21,9 @@
         }
     </style>
 </head>
-<body>
-<header class="site-header">
-    <h1>Kerem Z. - Portfolio</h1>
-    <nav class="header-nav">
-        <a href="https://github.com/m0xai" target="_blank">Github</a>
-    </nav>
-</header>
+<body onload="toggleSidebar()">
 <main class="wrapper">
     <aside class="sidebar" id="sidebar">
-        <button class="sidebar-toggle-btn">O</button>
         <div class="avatar">Avatar</div>
         <ul>
             <a class="menu-item-link" href="#task1-7"><span>Task 1.7</span></a>
@@ -46,6 +39,12 @@
         </ul>
     </aside>
     <section class="content">
+        <header class="site-header">
+            <h1>Kerem Z. - Portfolio</h1>
+            <nav class="header-nav">
+                <a href="https://github.com/m0xai" target="_blank">Github</a>
+            </nav>
+        </header>
         <div class="menu-btn" onclick="toggleSidebar()">☰</div>
         <h2>Tasks</h2>
         <div id="task1-7" class="single-task">
@@ -116,11 +115,13 @@
         if (sidebar.style.width === "250px") {
             sidebar.style.width = "0";
             menuBtn.innerHTML = "&#9776;"; // Change icon to menu icon
-            content.style.marginLeft = "0px"
+            menuBtn.style.marginLeft = "0px"
+            content.style.marginLeft = "32px"
         } else {
             sidebar.style.width = "250px";
             menuBtn.innerHTML = "&times;"; // Change icon to close icon
-            content.style.marginLeft = "250px"
+            menuBtn.style.marginLeft = "-80px"
+            content.style.marginLeft = "282px"
         }
     }
 </script>
