@@ -42,6 +42,7 @@ body {
     width: 0;
     height: 100vh;
     background: #333;
+    color: white;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -92,9 +93,31 @@ body {
     border-radius: 100px;
 }
 
+.content-wrapper {
+    /*margin: 0 auto;*/
+    width: 100%;
+}
+
 .content {
     margin: 2rem;
-    flex: 1
+    flex: 1;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.menu-btn {
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    position: fixed;
+    z-index: 2;
+    display: none;
+    top: 1rem
+}
+
+.single-task-content {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .live-demo-link {
@@ -102,13 +125,10 @@ body {
     margin: 1rem;
 }
 
-.menu-btn {
-    font-size: 30px;
-    cursor: pointer;
-    position: fixed;
-    z-index: 2;
-    display: none;
-    top: 1rem
+.live-prev-frame {
+    max-width: 600px;
+    width: 100%;
+
 }
 
 @media screen and (max-width: 600px) {
