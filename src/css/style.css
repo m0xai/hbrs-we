@@ -1,6 +1,6 @@
 body {
     font-family: "Poppins", sans-serif;
-    overflow-x: hidden;
+    margin: 0;
 }
 
 .site-header {
@@ -12,7 +12,7 @@ body {
     font-size: 2rem;
 }
 
-.site-header > h1 {
+.site-header>h1 {
     font-size: 2rem;
     font-weight: 700;
     margin-left: 1rem;
@@ -22,7 +22,7 @@ body {
     display: flex;
 }
 
-.header-nav > a {
+.header-nav>a {
     margin: 0 1rem;
     font-family: "Poppins", sans-serif;
     color: orchid;
@@ -30,7 +30,7 @@ body {
     transition: color .3s ease-in-out;
 }
 
-.header-nav > a:hover {
+.header-nav>a:hover {
     color: purple;
 }
 
@@ -38,60 +38,84 @@ body {
     display: flex;
 }
 
-.sidebar {
-    width: 0;
-    height: 100vh;
-    background: #333;
-    color: white;
+aside {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background-color: #333;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
-    position: fixed;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-}
+  }
 
-.sidebar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.sidebar-subtitle {
-    margin-left: 1rem;
-}
-
-.menu-item-link {
-    display: block;
-    padding: 1rem 0;
-    width: 100%;
+  aside a {
+    padding: 15px 8px 15px 32px;
     text-decoration: none;
-    color: white;
-}
-
-.menu-item-link:hover {
-    background: white;
-    color: #007bff;
-}
-
-.menu-item-link span {
+    font-size: 18px;
+    color: #818181;
     display: block;
-    padding-left: 2rem;
-}
+    transition: 0.3s;
+  }
 
-.avater-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2rem;
-}
+  aside a:hover {
+    color: #f1f1f1;
+  }
 
-.avatar {
-    height: 100px;
-    width: 100px;
-    background: red;
-    border-radius: 100px;
-}
+  aside .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+  }
+
+  main {
+    transition: margin-left 0.5s;
+    padding: 16px;
+  }
+
+  @media screen and (max-width: 400px) {
+    aside {
+      width: 0;
+    }
+
+    aside a {
+      padding: 15px 8px 15px 16px;
+    }
+
+    aside .close-btn {
+      right: 16px;
+    }
+
+    main {
+      margin-left: 0;
+    }
+  }
+
+  .panel {
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  .accordion.active {
+    background-color: #444;
+  }
+
+  .accordion::after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+
+  .active::after {
+    content: "\2212";
+  }
 
 .content-wrapper {
     /*margin: 0 auto;*/
