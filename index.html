@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&family=Lato&family=Poppins:wght@300;400;700&display=swap"
-        rel="stylesheet">
+          rel="stylesheet">
     <style type="text/css">
         .gist {
             width: 500px !important;
@@ -23,124 +23,129 @@
 </head>
 
 <body>
-        <aside id="mySidebar">
-            <div class="close-btn" onclick="toggleNav()">&#9665;</div>
-            <a href="#">Home</a>
-            <button class="accordion">Section 1</button>
-            <div class="panel">
-                <a href="#">Submenu 1</a>
-                <a href="#">Submenu 2</a>
-                <a href="#">Submenu 3</a>
+<aside id="mySidebar">
+    <div class="close-btn" onclick="toggleNav()">&#9665;</div>
+    <a href="#">Home</a>
+    <button class="accordion">Section 1</button>
+    <div class="panel">
+        <a href="#">Submenu 1</a>
+        <a href="#">Submenu 2</a>
+        <a href="#">Submenu 3</a>
+    </div>
+    <button class="accordion">Section 2</button>
+    <div class="panel">
+        <a href="#">Submenu 1</a>
+        <a href="#">Submenu 2</a>
+        <a href="#">Submenu 3</a>
+    </div>
+</aside>
+<main class="wrapper">
+    <div class="content-wrapper">
+        <section class="content">
+            <header class="site-header">
+                <h1>Kerem Z. - Portfolio</h1>
+                <nav class="header-nav">
+                    <a href="https://github.com/m0xai" target="_blank">Github</a>
+                </nav>
+            </header>
+            <button class="open-btn" onclick="toggleNav()">&#9654; Open Sidebar</button>
+            <h2>Lösungen</h2>
+            <div id="task1-7" class="single-task">
+                <h3>1.2: HTML Wireframe</h3>
+                <a class="live-demo-link" href="src/tasks/01/1-7_HTML-Wireframe.html">Live Demo</a>
+                <div class="single-task-content">
+                    <script src="https://gist.github.com/m0xai/8cd9be3910f2d0c1c4dfc2d9b9780731.js"></script>
+                    <iframe class="live-prev-frame" src="src/tasks/01/1-7_HTML-Wireframe.html"></iframe>
+                </div>
             </div>
-            <button class="accordion">Section 2</button>
-            <div class="panel">
-                <a href="#">Submenu 1</a>
-                <a href="#">Submenu 2</a>
-                <a href="#">Submenu 3</a>
+            <div id="task2-3" class="single-task">
+                <h3>2.3: CSS-Positionierung</h3>
+                <h3>Loesung zu 1. Video</h3>
+                <a class="live-demo-link" href="src/tasks/02/2-erste-video.html">Live Demo</a>
+                <div class="single-task-content">
+                    <script src="https://gist.github.com/m0xai/e98bfd72b8833e17731025cdceb73cd9.js"></script>
+                    <iframe class="live-prev-frame" src="src/tasks/02/2-erste-video.html"></iframe>
+                </div>
             </div>
-        </aside>
-    <main class="wrapper">
-        <div class="content-wrapper">
-            <section class="content">
-                <header class="site-header">
-                    <h1>Kerem Z. - Portfolio</h1>
-                    <nav class="header-nav">
-                        <a href="https://github.com/m0xai" target="_blank">Github</a>
-                    </nav>
-                </header>
-                <button class="open-btn" onclick="toggleNav()">&#9654; Open Sidebar</button>
-                <h2>Lösungen</h2>
-                <div id="task1-7" class="single-task">
-                    <h3>1.2: HTML Wireframe</h3>
-                    <a class="live-demo-link" href="src/tasks/01/1-7_HTML-Wireframe.html">Live Demo</a>
-                    <div class="single-task-content">
-                        <script src="https://gist.github.com/m0xai/8cd9be3910f2d0c1c4dfc2d9b9780731.js"></script>
-                        <iframe class="live-prev-frame" src="src/tasks/01/1-7_HTML-Wireframe.html"></iframe>
-                    </div>
-                </div>
-                <div id="task2-3" class="single-task">
-                    <h3>2.3: CSS-Positionierung</h3>
-                    <h3>Loesung zu 1. Video</h3>
-                    <a class="live-demo-link" href="src/tasks/02/2-erste-video.html">Live Demo</a>
-                    <div class="single-task-content">
-                        <script src="https://gist.github.com/m0xai/e98bfd72b8833e17731025cdceb73cd9.js"></script>
-                        <iframe class="live-prev-frame" src="src/tasks/02/2-erste-video.html"></iframe>
-                    </div>
-                </div>
-                <div class="single-task">
-                    <h3>2.3: CSS-Positionierung</h3>
-                    <h3>Loesung zu 2. Video</h3>
-                    <a class="live-demo-link" href="src/tasks/02/2-zweite-video.html">Live Demo</a>
-                    <script src="https://gist.github.com/m0xai/b647fe6ae2c542341c680a125a13034c.js"></script>
-                    <h3>Loesung zu 2. Video</h3>
-                    <a class="live-demo-link" href="src/tasks/02/2-zweite-video.html">Live Demo</a>
-                    <script src="https://gist.github.com/m0xai/b647fe6ae2c542341c680a125a13034c.js"></script>
-                </div>
-                <div id="task3-1" class="single-task">
-                    <h3>3.1 Responsiv mit Flexbox und Desktop-First</h3>
-                    <a class="live-demo-link" href="src/tasks/03/1-resp-mit-flexbox.html">Live Demo</a>
-                    <script src="https://gist.github.com/m0xai/49378a980c8228501475d50fe3103f5f.js"></script>
-                    <h3>3.2 Responsiv mit Grid und Mobile-First</h3>
-                    <a class="live-demo-link" href="src/tasks/03/2-resp-mit-grid.html">Live Demo</a>
-                    <script src="https://gist.github.com/m0xai/4a466520a64db8a8685ad8d215a2b1c7.js"></script>
-                </div>
-                <div id="task6-1" class="single-task">
-                    <h3>6.1 Klammerpaare</h3>
-                    <a class="live-demo-link" href="src/tasks/06/klammerpaare.html">Live Demo</a>
-                </div>
-                <div id="task8-1" class="single-task">
-                    <h3>8.1 Promises</h3>
-                    <a class="live-demo-link" href="src/tasks/08/01.html">Live Demo</a>
-                </div>
-                <div id="task8-2" class="single-task">
-                    <h3>8.2 async/await</h3>
-                    <a class="live-demo-link" href="src/tasks/08/02.html">Live Demo</a>
-                </div>
-                <div id="task8-3" class="single-task">
-                    <h3>8.3 WWW-Navigator</h3>
-                    <a class="live-demo-link" href="src/tasks/08/03.html">Live Demo</a>
-                </div>
-                <div id="task9-1" class="single-task">
-                    <h3>9.1 SVG Show</h3>
-                    <iframe width="500" height="500" src="./src/tasks/09/01.html" title="Solution of 09.1"></iframe>
-                </div>
-                <div id="task9-2" class="single-task">
-                    <h3>9.2 Balkendiagramm Animiert</h3>
-                    <iframe width="500" height="400" src="./src/tasks/09/02.html" title="Solution of 09.2"></iframe>
-                </div>
-                <div id="task9-3" class="single-task">
-                    <h3>9.3 Tic Tac Toe</h3>
-                    <iframe width="500" height="400" src="./src/tasks/09/03.html" title="Solution of 09.2"></iframe>
-                </div>
-            </section>
-        </div>
-    </main>
+            <div class="single-task">
+                <h3>2.3: CSS-Positionierung</h3>
+                <h3>Loesung zu 2. Video</h3>
+                <a class="live-demo-link" href="src/tasks/02/2-zweite-video.html">Live Demo</a>
+                <script src="https://gist.github.com/m0xai/b647fe6ae2c542341c680a125a13034c.js"></script>
+                <h3>Loesung zu 2. Video</h3>
+                <a class="live-demo-link" href="src/tasks/02/2-zweite-video.html">Live Demo</a>
+                <script src="https://gist.github.com/m0xai/b647fe6ae2c542341c680a125a13034c.js"></script>
+            </div>
+            <div id="task3-1" class="single-task">
+                <h3>3.1 Responsiv mit Flexbox und Desktop-First</h3>
+                <a class="live-demo-link" href="src/tasks/03/1-resp-mit-flexbox.html">Live Demo</a>
+                <script src="https://gist.github.com/m0xai/49378a980c8228501475d50fe3103f5f.js"></script>
+                <h3>3.2 Responsiv mit Grid und Mobile-First</h3>
+                <a class="live-demo-link" href="src/tasks/03/2-resp-mit-grid.html">Live Demo</a>
+                <script src="https://gist.github.com/m0xai/4a466520a64db8a8685ad8d215a2b1c7.js"></script>
+            </div>
+            <div id="task6-1" class="single-task">
+                <h3>6.1 Klammerpaare</h3>
+                <a class="live-demo-link" href="src/tasks/06/klammerpaare.html">Live Demo</a>
+            </div>
+            <div id="task8-1" class="single-task">
+                <h3>8.1 Promises</h3>
+                <a class="live-demo-link" href="src/tasks/08/01.html">Live Demo</a>
+            </div>
+            <div id="task8-2" class="single-task">
+                <h3>8.2 async/await</h3>
+                <a class="live-demo-link" href="src/tasks/08/02.html">Live Demo</a>
+            </div>
+            <div id="task8-3" class="single-task">
+                <h3>8.3 WWW-Navigator</h3>
+                <a class="live-demo-link" href="src/tasks/08/03.html">Live Demo</a>
+            </div>
+            <div id="task9-1" class="single-task">
+                <h3>9.1 SVG Show</h3>
+                <iframe width="500" height="500" src="./src/tasks/09/01.html" title="Solution of 09.1"></iframe>
+            </div>
+            <div id="task9-2" class="single-task">
+                <h3>9.2 Balkendiagramm Animiert</h3>
+                <iframe width="500" height="400" src="./src/tasks/09/02.html" title="Solution of 09.2"></iframe>
+            </div>
+            <div id="task9-3" class="single-task">
+                <h3>9.3 Tic Tac Toe</h3>
+                <iframe width="500" height="400" src="./src/tasks/09/03.html" title="Solution of 09.2"></iframe>
+            </div>
+        </section>
+    </div>
+</main>
 
-    <script>
-  function toggleNav() {
-    const sidebar = document.getElementById("mySidebar");
-    sidebar.style.left = (sidebar.style.left === "0px") ? "-250px" : "0";
-  }
+<script>
+    function toggleNav() {
+        const sidebar = document.getElementById("mySidebar");
+        sidebar.style.left = (sidebar.style.left === "0px") ? "-250px" : "0";
+    }
 
-  function closeNav() {
-    document.getElementById("mySidebar").style.left = "-250px";
-  }
+    function closeNav() {
+        kerem();
+        document.getElementById("mySidebar").style.left = "-250px";
+    }
 
-  const acc = document.getElementsByClassName("accordion");
-  let i;
+    function kerem() {
+        console.log("kerem")
+    }
 
-  for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      const panel = this.nextElementSibling;
-      if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
-      } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
-      }
-    });
-  }
-    </script>
+    const acc = document.getElementsByClassName("accordion");
+    let i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            const panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
+</script>
 </body>
 
 </html>

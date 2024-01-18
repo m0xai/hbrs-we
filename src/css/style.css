@@ -12,7 +12,7 @@ body {
     font-size: 2rem;
 }
 
-.site-header>h1 {
+.site-header > h1 {
     font-size: 2rem;
     font-weight: 700;
     margin-left: 1rem;
@@ -22,7 +22,7 @@ body {
     display: flex;
 }
 
-.header-nav>a {
+.header-nav > a {
     margin: 0 1rem;
     font-family: "Poppins", sans-serif;
     color: orchid;
@@ -30,7 +30,7 @@ body {
     transition: color .3s ease-in-out;
 }
 
-.header-nav>a:hover {
+.header-nav > a:hover {
     color: purple;
 }
 
@@ -48,74 +48,76 @@ aside {
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
-  }
+    z-index: 9;
+}
 
-  aside a {
+aside a {
     padding: 15px 8px 15px 32px;
     text-decoration: none;
     font-size: 18px;
-    color: #818181;
+    color: #f1f1f1;
     display: block;
     transition: 0.3s;
-  }
 
-  aside a:hover {
-    color: #f1f1f1;
-  }
+}
 
-  aside .close-btn {
+aside a:hover {
+    color: #008dde;
+}
+
+aside .close-btn {
     position: absolute;
     top: 10px;
     right: 10px;
     font-size: 24px;
     color: white;
     cursor: pointer;
-  }
+}
 
-  main {
+main {
     transition: margin-left 0.5s;
     padding: 16px;
-  }
+}
 
-  @media screen and (max-width: 400px) {
+@media screen and (max-width: 400px) {
     aside {
-      width: 0;
+        width: 0;
     }
 
     aside a {
-      padding: 15px 8px 15px 16px;
+        padding: 15px 8px 15px 16px;
     }
 
     aside .close-btn {
-      right: 16px;
+        right: 16px;
     }
 
     main {
-      margin-left: 0;
+        margin-left: 0;
     }
-  }
+}
 
-  .panel {
+.panel {
     display: none;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
-  }
+}
 
-  .accordion.active {
+.accordion.active {
     background-color: #444;
-  }
+}
 
-  .accordion::after {
+.accordion::after {
     content: '\002B';
     color: white;
     font-weight: bold;
     float: right;
     margin-left: 5px;
-  }
+}
 
-  .active::after {
+.active::after {
     content: "\2212";
-  }
+}
 
 .content-wrapper {
     /*margin: 0 auto;*/

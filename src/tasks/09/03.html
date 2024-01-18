@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <style>
         body {
             display: flex;
@@ -36,40 +36,40 @@
 </head>
 <body>
 
-<svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+<svg height="300" width="300" xmlns="http://www.w3.org/2000/svg">
     <!-- Vertical Lines -->
-    <line x1="100" y1="0" x2="100" y2="300" />
-    <line x1="200" y1="0" x2="200" y2="300" />
+    <line x1="100" x2="100" y1="0" y2="300"/>
+    <line x1="200" x2="200" y1="0" y2="300"/>
 
     <!-- Horizontal Lines -->
-    <line x1="0" y1="100" x2="300" y2="100" />
-    <line x1="0" y1="200" x2="300" y2="200" />
+    <line x1="0" x2="300" y1="100" y2="100"/>
+    <line x1="0" x2="300" y1="200" y2="200"/>
 
     <!-- Cells -->
-    <rect x="0" y="0" width="100" height="100" fill="#006400" onclick="handleClick(0, 0)" />
-    <rect x="100" y="0" width="100" height="100" fill="#006400" onclick="handleClick(1, 0)" />
-    <rect x="200" y="0" width="100" height="100" fill="#006400" onclick="handleClick(2, 0)" />
+    <rect fill="#006400" height="100" onclick="handleClick(0, 0)" width="100" x="0" y="0"/>
+    <rect fill="#006400" height="100" onclick="handleClick(1, 0)" width="100" x="100" y="0"/>
+    <rect fill="#006400" height="100" onclick="handleClick(2, 0)" width="100" x="200" y="0"/>
 
-    <rect x="0" y="100" width="100" height="100" fill="#006400" onclick="handleClick(0, 1)" />
-    <rect x="100" y="100" width="100" height="100" fill="#006400" onclick="handleClick(1, 1)" />
-    <rect x="200" y="100" width="100" height="100" fill="#006400" onclick="handleClick(2, 1)" />
+    <rect fill="#006400" height="100" onclick="handleClick(0, 1)" width="100" x="0" y="100"/>
+    <rect fill="#006400" height="100" onclick="handleClick(1, 1)" width="100" x="100" y="100"/>
+    <rect fill="#006400" height="100" onclick="handleClick(2, 1)" width="100" x="200" y="100"/>
 
-    <rect x="0" y="200" width="100" height="100" fill="#006400" onclick="handleClick(0, 2)" />
-    <rect x="100" y="200" width="100" height="100" fill="#006400" onclick="handleClick(1, 2)" />
-    <rect x="200" y="200" width="100" height="100" fill="#006400" onclick="handleClick(2, 2)" />
+    <rect fill="#006400" height="100" onclick="handleClick(0, 2)" width="100" x="0" y="200"/>
+    <rect fill="#006400" height="100" onclick="handleClick(1, 2)" width="100" x="100" y="200"/>
+    <rect fill="#006400" height="100" onclick="handleClick(2, 2)" width="100" x="200" y="200"/>
 
     <!-- X and O -->
-    <text x="50" y="50" id="cell00"></text>
-    <text x="150" y="50" id="cell01"></text>
-    <text x="250" y="50" id="cell02"></text>
+    <text id="cell00" x="50" y="50"></text>
+    <text id="cell01" x="150" y="50"></text>
+    <text id="cell02" x="250" y="50"></text>
 
-    <text x="50" y="150" id="cell10"></text>
-    <text x="150" y="150" id="cell11"></text>
-    <text x="250" y="150" id="cell12"></text>
+    <text id="cell10" x="50" y="150"></text>
+    <text id="cell11" x="150" y="150"></text>
+    <text id="cell12" x="250" y="150"></text>
 
-    <text x="50" y="250" id="cell20"></text>
-    <text x="150" y="250" id="cell21"></text>
-    <text x="250" y="250" id="cell22"></text>
+    <text id="cell20" x="50" y="250"></text>
+    <text id="cell21" x="150" y="250"></text>
+    <text id="cell22" x="250" y="250"></text>
 </svg>
 
 <script>

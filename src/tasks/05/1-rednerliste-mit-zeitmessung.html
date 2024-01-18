@@ -13,7 +13,7 @@
         <button onclick="createRendner()">Submit</button>
     </div>
 </div>
-<div >
+<div>
     <ul id="rendner-liste">
     </ul>
 </div>
@@ -32,13 +32,15 @@
         constructor(name) {
             this.name = name;
         }
-         start() {
+
+        start() {
             const timerEl = document.getElementById(`${this.name}-timer`)
             this.intervalId = setInterval(() => {
                 this.duration++;
                 timerEl.innerText = this.showAsTimer();
             }, 1000)
         }
+
         stop() {
             clearInterval(this.intervalId)
         }
@@ -59,6 +61,7 @@
 
     const rendnerListeEl = document.getElementById("rendner-liste")
     const rendnerList = []
+
     function createRendner() {
         const inputVal = document.getElementById("new-render").value
         const r = new Rendner(inputVal);
@@ -68,17 +71,17 @@
         rendnerListeEl.appendChild(li);
         // Set click event listener for start button
         const rBtn = document.getElementById(`${r.name}-btn`)
-        rBtn.addEventListener("click", () =>  toggleTimer(r.name));
+        rBtn.addEventListener("click", () => toggleTimer(r.name));
         rendnerList.push(r);
     }
 
     function toggleTimer(rendnerName) {
         const el = document.getElementById(`${rendnerName}-btn`);
         const rendner = rendnerList.find(r => r.name === rendnerName);
-        if(el.innerText === "Start") {
+        if (el.innerText === "Start") {
             rendner.start();
             el.innerText = "Stop"
-        } else if(el.innerText === "Stop") {
+        } else if (el.innerText === "Stop") {
             rendner.stop();
             el.innerText = "Start"
         }

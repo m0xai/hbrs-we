@@ -1,5 +1,5 @@
 function curry(binaryFn, arg1) {
-    return function(arg2) {
+    return function (arg2) {
         return binaryFn(arg1, arg2);
     };
 }
@@ -23,14 +23,14 @@ console.log(mul5(6)); // Ergebnis: 30
 
 // Aufgabe 4.1 - addf-Funktion
 function addf(x) {
-    return function(y) {
+    return function (y) {
         return x + y;
     };
 }
 
 // Curry-Funktion
 function curry(binaryFn, arg1) {
-    return function(arg2) {
+    return function (arg2) {
         return binaryFn(arg1, arg2);
     };
 }
@@ -41,8 +41,8 @@ const inc = curry(addf, 1);
 console.log(inc(5)); // Ergebnis: 6
 
 function applyf(binaryFn) {
-    return function(x) {
-        return function(y) {
+    return function (x) {
+        return function (y) {
             return binaryFn(x, y);
         };
     };
@@ -53,22 +53,22 @@ const inc = curry(applyf, add);
 
 console.log(inc(5)); // Ergebnis: 6
 function applyf(binaryFn) {
-    return function(x) {
-        return function(y) {
+    return function (x) {
+        return function (y) {
             return binaryFn(x, y);
         };
     };
 }
 
 function addf(x) {
-    return function(y) {
+    return function (y) {
         return x + y;
     };
 }
 
 // Curry-Funktion
 function curry(binaryFn, arg1) {
-    return function(arg2) {
+    return function (arg2) {
         return binaryFn(arg1, arg2);
     };
 }
@@ -79,7 +79,7 @@ const inc = curry(applyf, addf)(1);
 console.log(inc(5)); // Ergebnis: 6
 
 function demethodize(method) {
-    return function(x, y) {
+    return function (x, y) {
         return method.call(x, y);
     };
 }
@@ -90,13 +90,13 @@ const add = demethodize(Number.prototype.add);
 console.log(add(5, 6)); // Ergebnis: 11
 
 function twice(binaryFn) {
-    return function(x) {
+    return function (x) {
         return binaryFn(x, x);
     };
 }
 
 // Beispiel: twice für die add-Funktion
-const add = function(x, y) {
+const add = function (x, y) {
     return x + y;
 };
 const double = twice(add);
@@ -104,7 +104,7 @@ const double = twice(add);
 console.log(double(11)); // Ergebnis: 22
 
 // Beispiel: twice für die mul-Funktion
-const mul = function(x, y) {
+const mul = function (x, y) {
     return x * y;
 };
 const square = twice(mul);
@@ -112,17 +112,17 @@ const square = twice(mul);
 console.log(square(11)); // Ergebnis: 121
 
 function composeu(fn1, fn2) {
-    return function(x) {
+    return function (x) {
         return fn2(fn1(x));
     };
 }
 
 // Beispiel: composeu für die Funktionen double und square
-const double = function(x) {
+const double = function (x) {
     return x * 2;
 };
 
-const square = function(x) {
+const square = function (x) {
     return x * x;
 };
 
@@ -131,17 +131,17 @@ const composedFunction = composeu(double, square);
 console.log(composedFunction(3)); // Ergebnis: 36
 
 function composeb(fn1, fn2) {
-    return function(x, y, z) {
+    return function (x, y, z) {
         return fn2(fn1(x, y), z);
     };
 }
 
 // Beispiel: composeb für die Funktionen add und mul
-const add = function(x, y) {
+const add = function (x, y) {
     return x + y;
 };
 
-const mul = function(x, y) {
+const mul = function (x, y) {
     return x * y;
 };
 
@@ -165,7 +165,7 @@ function once(fn) {
 }
 
 // Beispiel: once für die Funktion add
-const add = function(x, y) {
+const add = function (x, y) {
     return x + y;
 };
 
@@ -178,11 +178,11 @@ function counterf(initialValue) {
     let counter = initialValue;
 
     return {
-        inc: function() {
+        inc: function () {
             counter += 1;
             return counter;
         },
-        dec: function() {
+        dec: function () {
             counter -= 1;
             return counter;
         }
@@ -217,6 +217,7 @@ const temp = revocable(alert);
 
 temp.invoke(7); // führt zu alert(7);
 temp.revoke();
+
 // temp.invoke(8); // Würde einen Fehler auslösen, da die Funktion zurückgerufen wurde
 
 function vector() {
