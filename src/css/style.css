@@ -1,6 +1,7 @@
 body {
     font-family: "Poppins", sans-serif;
     margin: 0;
+    width: 100%;
 }
 
 .site-header {
@@ -36,6 +37,7 @@ body {
 
 .wrapper {
     display: flex;
+    margin: 0 auto;
 }
 
 aside {
@@ -127,8 +129,7 @@ main {
 }
 
 .content-wrapper {
-    /*margin: 0 auto;*/
-    width: 100%;
+    margin: 0 auto;
 }
 
 .content {
