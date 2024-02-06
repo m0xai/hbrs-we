@@ -6,7 +6,7 @@
     <title>Persönliche Portfolio von Kerem Z.</title>
     <link rel="stylesheet" href="src/css/normalize.css">
     <link rel="stylesheet" href="src/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&family=Lato&family=Poppins:wght@300;400;700&display=swap"
           rel="stylesheet">
@@ -139,37 +139,7 @@
         </section>
     </div>
 </main>
-
-<script>
-    function toggleNav() {
-        const sidebar = document.getElementById("mySidebar");
-        sidebar.style.left = (sidebar.style.left === "0px") ? "-250px" : "0";
-    }
-
-    function closeNav() {
-        kerem();
-        document.getElementById("mySidebar").style.left = "-250px";
-    }
-
-    function kerem() {
-        console.log("kerem")
-    }
-
-    const acc = document.getElementsByClassName("accordion");
-    let i;
-
-    for (i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function () {
-            this.classList.toggle("active");
-            const panel = this.nextElementSibling;
-            if (panel.style.maxHeight) {
-                panel.style.maxHeight = null;
-            } else {
-                panel.style.maxHeight = panel.scrollHeight + "px";
-            }
-        });
-    }
-</script>
+<script type="module" src="./src/js/script.js"></script>
 </body>
 
 </html>
