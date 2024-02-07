@@ -19,6 +19,15 @@
             max-height: 500px;
             max-width: 500px;
         }
+
+        .animated-shape {
+            transform-origin: center;
+            transition: transform 0.5s ease;
+        }
+
+        .animated-shape:hover {
+            transform: scale(1.1);
+        }
     </style>
 </head>
 
@@ -48,6 +57,27 @@
                     <a href="https://github.com/m0xai" target="_blank">Github</a>
                 </nav>
             </header>
+                <section id="demo-section">
+                    <svg width="100%" height="100%" viewBox="0 0 1024 768" xmlns="http://www.w3.org/2000/svg">
+                        <rect class="animated-shape" x="100" y="100" width="200" height="200" fill="#F08080"
+                            transform="translate(100, 100)" />
+                        <circle class="animated-shape" cx="400" cy="400" r="100" fill="#FFD700"
+                            transform="rotate(45, 400, 400)" />
+                        <ellipse class="animated-shape" cx="600" cy="400" rx="160" ry="80" fill="#4682B4"
+                            transform="scale(1.5, 0.8)" />
+                        <polygon class="animated-shape" points="550,250 600,400 500,400" fill="#32CD32"
+                            transform="translate(100, -100) rotate(30, 550, 400)" />
+                        <polygon class="animated-shape"
+                            points="400,200 440,340 600,340 460,420 500,560 400,480 300,560 340,420 240,340 400,340"
+                            fill="#8A2BE2" transform="scale(0.8) rotate(-45, 400, 400)" />
+                        <path class="animated-shape"
+                            d="M800,400 C800,300 700,200 600,200 C500,200 400,300 400,400 C400,500 500,600 600,700 C700,600 800,500 800,400 Z"
+                            fill="#FF69B4" transform="translate(-100, 0) rotate(-45, 600, 400)" />
+                        <polygon class="animated-shape" points="200,400 250,450 300,400 270,350 230,350" fill="#00FFFF"
+                            transform="scale(1.2) translate(100, 100)" />
+                        <rect class="animated-shape" x="800" y="300" width="150" height="150" fill="#FFA500"
+                            transform="rotate(-30, 875, 375)" />
+                    </svg>
                     <blockquote id="quote-wrapper">
                         <p id="quote-paragraph"></p>
                         <footer>- <cite id="quote-author"></cite></footer>
