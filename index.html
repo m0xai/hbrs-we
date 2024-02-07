@@ -48,16 +48,10 @@
                     <a href="https://github.com/m0xai" target="_blank">Github</a>
                 </nav>
             </header>
-            <button class="open-btn" onclick="toggleNav()">&#9654; Open Sidebar</button>
-            <h2>Lösungen</h2>
-            <div id="task1-1" class="single-task">
-                <div class="question">
-                    <h3>1.1 World Wide Web</h3>
-                    <ol>
-                        <li>Mit welchen fachlichen Argumenten wurde das WWW-Proposal von Tim Burners Lee abgelehnt?</li>
-                        <li>Was sind die fachlichen Argumente, warum das WWW dennoch ein Erfolg wurde?</li>
-                        <li>Was wäre der Preis für die garantierte Verhinderung von "broken links"?</li>
-                    </ol>
+                    <blockquote id="quote-wrapper">
+                        <p id="quote-paragraph"></p>
+                        <footer>- <cite id="quote-author"></cite></footer>
+                    </blockquote>
                 </div>
                 <div class="solution">
                     <h3>Loesung 1.1</h3>
@@ -190,6 +184,30 @@
     </div>
 </main>
 <script type="module" src="./src/js/script.js"></script>
+    <script>
+        let quoteList = []
+        const getQuotes = async () => {
+            const request = await fetch("./src/asset/quotes.json");
+            const data = await request.json()
+            quoteList = [...data.quotes]
+        }
+        getQuotes().then(() => {
+            const quoteP = document.getElementById("quote-paragraph");
+            const authorEl = document.getElementById("quote-author");
+            const quoteObj = quoteList[generateRandom(102)]
+            quoteP.innerText = quoteObj.quote
+            authorEl.innerText = quoteObj.author
+        }
+        )
+
+        function generateRandom(maxLimit = 100) {
+            let rand = Math.random() * maxLimit;
+            rand = Math.floor(rand); // 99
+            return rand;
+        }
+
+    </script>
 </body>
+
 
 </html>
