@@ -1,0 +1,18 @@
+#site-header {
+    background-color: var(--accent);
+}
+
+#site-name-headings {
+    width: 100%;
+}
+
+
+#site-name-headings {
+    display: inline;
+    text-align: center
+}
+
+#site-name-headings h1 {
+    display: inline;
+    font-size: 32px;
+}

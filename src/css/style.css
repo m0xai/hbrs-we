@@ -1,19 +1,40 @@
+@import url("./scroll-to-top.css");
+@import url("./sidebar.css");
+@import url("./header.css");
+@import url("./tasks.css");
+@import url("./code.css");
+
+:root {
+    --accent: #ff9900;
+    --accent-dark: #b86e00;
+    --poppins: "Poppins", sans-serif;
+}
+
 body {
-    font-family: "Poppins", sans-serif;
+    font-family: "Verdana", sans-serif;
     margin: 0;
     width: 100%;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--poppins)
+}
+
 .site-header {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
     font-weight: 300;
     font-size: 2rem;
 }
 
-.site-header > h1 {
+.site-header>h1 {
     font-size: 2rem;
     font-weight: 700;
     margin-left: 1rem;
@@ -23,16 +44,17 @@ body {
     display: flex;
 }
 
-.header-nav > a {
+.header-nav>a {
     margin: 0 1rem;
-    font-family: "Poppins", sans-serif;
-    color: orchid;
+    font-family: var(--poppins);
+    font-size: 20px;
+    color: var(--accent);
     text-decoration: none;
-    transition: color .3s ease-in-out;
+    transition: color .2s ease-in-out;
 }
 
-.header-nav > a:hover {
-    color: purple;
+.header-nav>a:hover {
+    color: var(--accent-dark);
 }
 
 .wrapper {
@@ -57,14 +79,14 @@ aside a {
     padding: 15px 8px 15px 32px;
     text-decoration: none;
     font-size: 18px;
-    color: #f1f1f1;
+    color: var(--accent);
     display: block;
     transition: 0.3s;
 
 }
 
 aside a:hover {
-    color: #008dde;
+    color: var(--accent-dark);
 }
 
 aside .close-btn {
@@ -112,7 +134,8 @@ main {
     transition: 0.4s;
 }
 
-.active, .accordion:hover {
+.active,
+.accordion:hover {
     background-color: #ccc;
 }
 
@@ -130,6 +153,8 @@ main {
 
 .content-wrapper {
     margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
 }
 
 .content {
@@ -149,21 +174,6 @@ main {
     top: 1rem
 }
 
-.single-task-content {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.live-demo-link {
-    display: block;
-    margin: 1rem;
-}
-
-.live-prev-frame {
-    max-width: 600px;
-    width: 100%;
-
-}
 
 @media screen and (max-width: 600px) {
     .sidebar {
@@ -187,4 +197,8 @@ main {
         padding-left: 1rem;
         border-radius: 0 1rem 1rem 0;
     }
+}
+
+#quote-wrapper {
+    text-align: right;
 }

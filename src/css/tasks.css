@@ -1,0 +1,19 @@
+.single-task-content {
+    max-width: 1168px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.live-demo-link {
+    display: block;
+    margin: 1rem;
+}
+
+.live-prev-frame {
+    max-width: 600px;
+    width: 100%;
+    height: 537px;
+    margin-bottom: 1rem;
+}
