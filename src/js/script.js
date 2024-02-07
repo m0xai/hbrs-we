@@ -12,3 +12,22 @@ setInterval(() => {
 }, 1000);
 
 stats.appendChild(secondsEl)
+
+let scrollBtn = document.getElementById("to-top-btn");
+
+window.onscroll = function () { scrollFunction() };
+
+let scrollFunction = () => {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollBtn.style.display = "block";
+    } else {
+        scrollBtn.style.display = "none";
+    }
+}
+
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
+window.topFunction = topFunction
