@@ -1,58 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <title>Animated Bar Chart</title>
 </head>
+
 <body>
-<div id="chart-container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    <div id="chart-container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Fetch JSON data
-        fetch('data.json')
-            .then(response => response.json())
-            .then(data => {
-                // Extract required data for the chart
-                const categories = data.map(item => item.Datum);
-                const seriesData = data.map(item => parseFloat(item['Gesamt (Netzlast) [MWh] Berechnete Auflösungen'].replace(/\./g, '').replace(',', '.')));
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Fetch JSON data
+            fetch('data.json')
+                .then(response => response.json())
+                .then(data => {
+                    // Extract required data for the chart
+                    const categories = data.map(item => item.Datum);
+                    const seriesData = data.map(item => parseFloat(item['Gesamt (Netzlast) [MWh] Berechnete Auflösungen'].replace(/\./g, '').replace(',', '.')));
 
-                // Create Highcharts chart
-                Highcharts.chart('chart-container', {
-                    chart: {
-                        type: 'bar'
-                    },
-                    title: {
-                        text: 'Animated Bar Chart'
-                    },
-                    xAxis: {
-                        categories: categories,
+                    // Create Highcharts chart
+                    Highcharts.chart('chart-container', {
+                        chart: {
+                            type: 'bar'
+                        },
                         title: {
-                            text: 'Datum'
-                        }
-                    },
-                    yAxis: {
-                        title: {
-                            text: 'Gesamt (Netzlast) [MWh]'
-                        }
-                    },
-                    series: [{
-                        name: 'Gesamt (Netzlast) [MWh]',
-                        data: seriesData
-                    }],
-                    plotOptions: {
-                        bar: {
-                            dataLabels: {
-                                enabled: true
+                            text: 'Animated Bar Chart'
+                        },
+                        xAxis: {
+                            categories: categories,
+                            title: {
+                                text: 'Datum'
+                            }
+                        },
+                        yAxis: {
+                            title: {
+                                text: 'Gesamt (Netzlast) [MWh]'
+                            }
+                        },
+                        series: [{
+                            name: 'Gesamt (Netzlast) [MWh]',
+                            data: seriesData
+                        }],
+                        plotOptions: {
+                            bar: {
+                                dataLabels: {
+                                    enabled: true
+                                }
                             }
                         }
-                    }
-                });
-            })
-            .catch(error => console.error('Error fetching data:', error));
-    });
-</script>
+                    });
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        });
+    </script>
 </body>
+
 </html>
