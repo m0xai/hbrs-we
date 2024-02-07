@@ -105,20 +105,56 @@
                         <footer>- <cite id="quote-author"></cite></footer>
                     </blockquote>
                 </div>
-                <div class="solution">
-                    <h3>Loesung 1.1</h3>
-                    <ol>
-                        <li>Mangelnde Verständlichkeit. Bestehende Informationssysteme, Mangelnde Geschäftsrelevanz,
-                            Fehlende
-                        </li>
-                        <li>Sicherheit und Kontrolle
-                            Dezentralisierung und Offenheit, Einfache Benutzbarkeit, Hypertext und Verlinkung von
-                            Ressourcen,
-                            Skalierbarkeit.
-                        </li>
-                        <li>Websitesgröße, Häufigkeit von Änderungen, Servicequalitaet</li>
-                    </ol>
-                </div>
+            <div>
+                <h3>Article of the Day: Spread Operator</h3>
+                <p>The JavaScript spread operator (...) is a handy syntax introduced in ECMAScript 6 (ES6) that allows
+                    an
+                    iterable (like an array) to be expanded into individual elements. It can be used in function calls,
+                    array literals, and object literals.
+                </p>
+
+                <pre>
+                <code>
+                // Example 1: Combining arrays
+                const arr1 = [1, 2, 3];
+                const arr2 = [4, 5, 6];
+                const combinedArray = [...arr1, ...arr2];
+                console.log(combinedArray); // Output: [1, 2, 3, 4, 5, 6]
+
+                // Example 2: Copying an array
+                const originalArray = [7, 8, 9];
+                const copiedArray = [...originalArray];
+                console.log(copiedArray); // Output: [7, 8, 9]
+                console.log(originalArray === copiedArray); // Output: false (they are different arrays)
+                </code>
+                </pre>
+
+                <p>
+                    And here's how you can use it with function arguments:
+                </p>
+
+                <pre>
+                <code>
+                // Example 3: Using with function arguments
+                function sum(a, b, c) {
+                    return a + b + c;
+                }
+
+                const numbers = [1, 2, 3];
+                console.log(sum(...numbers)); // Output: 6
+                </code>
+                </pre>
+                <p>
+                    In this example, the sum function expects three arguments, but we're passing an array numbers with
+                    the
+                    spread operator. The spread operator expands the numbers array into individual arguments, allowing
+                    it to
+                    work seamlessly with the sum function.
+
+                    The spread operator is versatile and allows for cleaner and more concise code, especially when
+                    working
+                    with arrays and function arguments.
+                </p>
             </div>
             <h2>Solution Navigator</h2>
             <div id="task1-7" class="single-task">
