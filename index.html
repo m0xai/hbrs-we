@@ -9,7 +9,7 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&family=Lato&family=Poppins:wght@300;400;700&display=swap"
-          rel="stylesheet">
+        rel="stylesheet">
     <style type="text/css">
         .gist {
             width: 500px !important;
@@ -32,9 +32,9 @@
 </head>
 
 <body>
-<aside id="mySidebar">
+    <aside id="mySidebar">
         <div class="close-btn" onclick="toggleNav()">&#x2715;</div>
-    <a href="#">Home</a>
+        <a href="#">Home</a>
         <button class="accordion">Task 1</button>
         <div class="panel">
             <a href="#task1-7">Solution 1.7</a>
@@ -58,27 +58,34 @@
             <a href="#task6-1">Solution 6.1</a>
         </div>
         <button class="accordion">Task 8</button>
-    <div class="panel">
+        <div class="panel">
             <a href="#task8-1">Solution 8.1</a>
             <a href="#task8-2">Solution 8.2</a>
             <a href="#task8-3">Solution 8.3</a>
-    </div>
+        </div>
         <button class="accordion">Task 9</button>
-    <div class="panel">
+        <div class="panel">
             <a href="#task9-1">Solution 9.1</a>
             <a href="#task9-2">Solution 9.2</a>
             <a href="#task9-3">Solution 9.3</a>
-    </div>
-</aside>
-<main class="wrapper">
-    <div class="content-wrapper">
-        <section class="content">
-            <header class="site-header">
-                <h1>Kerem Z. - Portfolio</h1>
-                <nav class="header-nav">
-                    <a href="https://github.com/m0xai" target="_blank">Github</a>
-                </nav>
-            </header>
+        </div>
+    </aside>
+    <main class="wrapper">
+        <div class="content-wrapper">
+            <div id="header-wrapper">
+                <button onclick="topFunction()" id="to-top-btn" title="Go to top">↑</button>
+                <header class="site-header">
+                    <button class="open-btn" onclick="toggleNav()">&#9776;Menu</button>
+                    <div id="site-name-headings">
+                        <h1>Kerem Zopcuk</h1>
+                        <h1>-</h1>
+                        <h1>Portfolio</h1>
+                    </div>
+                    <nav class="header-nav">
+                        <a href="https://github.com/m0xai" target="_blank">Github</a>
+                        <a href="https://keremz.de" target="_blank">Website</a>
+                    </nav>
+                </header>
                 <section id="demo-section">
                     <svg width="100%" height="100%" viewBox="0 0 1024 768" xmlns="http://www.w3.org/2000/svg">
                         <rect class="animated-shape" x="100" y="100" width="200" height="200" fill="#F08080"
@@ -104,7 +111,10 @@
                         <p id="quote-paragraph"></p>
                         <footer>- <cite id="quote-author"></cite></footer>
                     </blockquote>
-                </div>
+                    <p id="seconds-since">You're viewing this page since 0 seconds
+                    </p>
+                </section>
+            </div>
             <div>
                 <h3>Article of the Day: Spread Operator</h3>
                 <p>The JavaScript spread operator (...) is a handy syntax introduced in ECMAScript 6 (ES6) that allows
@@ -184,7 +194,7 @@
                 <h3 id="task3-1">3.1 Responsiv mit Flexbox und Desktop-First</h3>
                 <a class="live-demo-link" href="src/tasks/03/1-resp-mit-flexbox.html">Live Demo</a>
                 <div class="single-task-content">
-                <script src="https://gist.github.com/m0xai/49378a980c8228501475d50fe3103f5f.js"></script>
+                    <script src="https://gist.github.com/m0xai/49378a980c8228501475d50fe3103f5f.js"></script>
                     <iframe class="live-prev-frame" src="src/tasks/03/1-resp-mit-flexbox.html"></iframe>
                 </div>
                 <h3 id="task3-2">3.2 Responsiv mit Grid und Mobile-First</h3>
@@ -196,7 +206,7 @@
                 <h3 id="task3-3">3.3 Wireframe responsive mit Grid</h3>
                 <a class="live-demo-link" href="src/tasks/03/03.html">Live Demo</a>
                 <div class="single-task-content">
-                <script src="https://gist.github.com/m0xai/4a466520a64db8a8685ad8d215a2b1c7.js"></script>
+                    <script src="https://gist.github.com/m0xai/4a466520a64db8a8685ad8d215a2b1c7.js"></script>
                     <iframe class="live-prev-frame" src="src/tasks/03/03.html"></iframe>
                 </div>
             </div>
@@ -207,7 +217,7 @@
                 <div class="single-task-content">
                     <script src="https://gist.github.com/m0xai/935b51b1f35d909e49f7807fbf3458a1.js"></script>
                     <iframe class="live-prev-frame" src="src/tasks/05/1-rednerliste-mit-zeitmessung.html"></iframe>
-            </div>
+                </div>
             </div>
             <div class="single-task">
                 <h3 id="task6-1">6.1 Klammerpaare</h3>
@@ -268,10 +278,10 @@
                         title="Solution of 09.2"></iframe>
                 </div>
             </div>
-        </section>
-    </div>
-</main>
-<script type="module" src="./src/js/script.js"></script>
+            </section>
+        </div>
+    </main>
+    <script type="module" src="./src/js/script.js"></script>
     <script>
         let quoteList = []
         const getQuotes = async () => {
