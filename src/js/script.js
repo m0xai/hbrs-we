@@ -2,16 +2,16 @@ import { toggleNav } from "./sidebar.js";
 
 window.toggleNav = toggleNav;
 
-const stats = document.getElementById("stats")
+const demoSection = document.getElementById("demo-section")
 
-const secondsEl = document.createElement("p");
+const secondsEl = document.getElementById("seconds-since");
 let secondsSince = 0;
 setInterval(() => {
     secondsSince++;
     secondsEl.innerText = `You're viewing this page since ${secondsSince} seconds`;
 }, 1000);
 
-stats.appendChild(secondsEl)
+demoSection.appendChild(secondsEl)
 
 let scrollBtn = document.getElementById("to-top-btn");
 
