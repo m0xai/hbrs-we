@@ -1,0 +1,13 @@
+.open-btn {
+    background-color: #ff9900;
+    font-family: var(--poppins);
+    font-size: 16px;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.2rem;
+}
+
+.open-btn:hover {
+
+    cursor: pointer;
+}
