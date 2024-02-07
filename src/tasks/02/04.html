@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Survey Form</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Lato&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #a9d7d1;
+            font-family: "Roboto", sans-serif;
+            width: 800px;
+            margin: 0 auto;
+        }
+
+        #form-wrapper {
+            width: 800px;
+        }
+
+        #form-wrapper>h1 {
+            font-weight: 500;
+            text-align: center;
+        }
+
+        #form-summary {
+            align-self: center;
+        }
+
+        #form-wrapper__input-fields {
+            width: 600px;
+            min-height: 400px;
+            border-radius: 40px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            background-color: snow;
+            padding: 3rem;
+        }
+
+        .form-wrapper__input-fields__single-input {
+            display: flex;
+            text-align: right;
+            margin: .8rem;
+            min-width: 5rem;
+        }
+
+        .form-wrapper__input-fields__single-select>select {
+            width: 5rem;
+            height: 2rem;
+            margin: .8rem;
+            margin-right: 5rem;
+        }
+
+        .form-wrapper__input-fields__single-input>label {
+            margin-right: 1rem;
+        }
+
+        .form-wrapper__input-fields__select-radio {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-wrapper__input-fields__select-radio>div {
+            display: flex;
+            margin: 0 4rem 1rem 1rem;
+        }
+
+        .form-wrapper__input-fields__single-select__fcc>div {
+            width: 4rem;
+        }
+
+        .form-wrapper__input-fields__single-select__fcc>select {
+            height: 2rem;
+            margin-left: 1rem;
+            margin-right: 3rem;
+        }
+
+        .form-wrapper__input-fields__single-checkbox {
+            display: flex;
+            margin-top: 2rem;
+        }
+
+        .form-wrapper__input-fields__single-checkbox>span {
+            text-align: right;
+        }
+
+
+        .form-wrapper__input-fields__single-checkbox>div>div {
+            margin: 0 1rem 1rem 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="form-wrapper">
+        <h1>Survey Form</h1>
+        <div id="form-wrapper__input-fields">
+            <p id="form-summary">Let us know how we can improve freeCodeCamp</p>
+            <div class="form-wrapper__input-fields__single-input">
+                <label for="name-input">* Name</label>
+                <input id="name-input" placeholder="Enter your name" required type="text">
+            </div>
+            <div class="form-wrapper__input-fields__single-input">
+                <label for="email-input">* Email</label>
+                <input id="email-input" placeholder="Enter your Email" required type="email">
+            </div>
+            <div class="form-wrapper__input-fields__single-input">
+                <label for="age-input">* Age</label>
+                <input id="age-input" placeholder="Age" required type="number">
+            </div>
+            <div class="form-wrapper__input-fields__single-select">
+                <label for="role-select">Which option best describes your current role?</label>
+                <select id="role-select">
+                    <option label="Student">Student</option>
+                    <option label="Lehrer">Lehrer</option>
+                </select>
+            </div>
+            <div class="form-wrapper__input-fields__single-input">
+                <span>How likely is that you would recommend <br>
+                    freeCodeCamp to a friend?</span>
+                <div class="form-wrapper__input-fields__select-radio">
+                    <div>
+                        <input checked id="definitely" name="drone" type="radio" value="definitely" />
+                        <label for="definitely">Definitely</label>
+                    </div>
+                    <div>
+                        <input id="maybe" name="drone" type="radio" value="maybe" />
+                        <label for="maybe">Maybe</label>
+                    </div>
+                    <div>
+                        <input id="notsure" name="drone" type="radio" value="notsure" />
+                        <label for="notsure">Not Sure</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-wrapper__input-fields__single-select__fcc">
+                <label for="fcc-select">Which option best describes your current role?</label>
+                <select id="fcc-select">
+                    <option disabled selected value="">Select an option</option>
+                    <option label="Student">Student</option>
+                    <option label="Lehrer">Lehrer</option>
+                </select>
+            </div>
+
+            <div class="form-wrapper__input-fields__single-checkbox">
+                <span>Things that should be improved in the future <br>
+                    (Check all that apply):</span>
+                <div class="form-wrapper__input-fields__single-checkbox-options">
+                    <div>
+                        <input checked id="frontend" name="frontend" type="checkbox" />
+                        <label for="frontend">Front-end Projects</label>
+                    </div>
+                    <div>
+                        <input id="backend" name="backend" type="checkbox" />
+                        <label for="backend">Back-end Projects</label>
+                    </div>
+                    <div>
+                        <input id="visualization" name="visualization" type="checkbox" />
+                        <label for="visualization">Data Visualization</label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
